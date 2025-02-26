@@ -1,0 +1,206 @@
+.nav {
+    height: 75px;
+    width: 100%;
+    background-color: #2554e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* logo */
+.logo, .logo a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.img {
+    height: 100%;
+}
+.img img {
+    height: 100%;
+    margin: auto 8px;
+}
+
+.txt{
+    display: flex;
+    flex-direction: column;
+}
+.titulo_uno, .titulo_dos{
+    font-size: 19px;
+    font-weight: 600;
+}
+.titulo_uno{
+    color: #fff;
+}
+.titulo_dos{
+    color: #C0D3FD;
+}
+
+/* links */
+.links {
+    height: 100%;
+    width: 650px;
+}
+
+.links ul {
+    display: flex;
+    height: 100%;
+    margin: auto 15px;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.links ul li {
+    flex-grow: 1;
+}
+
+.links ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.links ul li a:hover {
+    background-color: #1F37D6;
+}
+.active{
+    background-color: #1F37D6;
+}
+
+/* menu dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute; /* Mantiene la posición absoluta respecto al contenedor padre */
+    width: 185%; /* Puedes ajustar el ancho según sea necesario */
+    top: 100%; /* Se mantiene justo debajo del enlace */
+    left: 0; /* Alinea a la izquierda del contenedor padre */
+    background-color: #3464F4;
+    z-index: 1;
+}
+
+.dropdown-content ul {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Asegúrate de que no haya padding */
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content ul li {
+    width: 100%;
+    height: auto; /* Permite que se ajuste automáticamente */
+}
+
+.dropdown-content ul li a {
+    font-size: 16px;
+    padding: 10px 15px; /* Establece un padding fijo para el enlace */
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.dropdown-content ul li a:hover{
+    background-color: #1F37D6;
+}
+
+
+
+/* dropdown modalidades */
+.dropdown-modalidades{
+    position: relative;
+}
+.dropdown-content-modalidades{
+    display: none;
+    position: absolute;
+    width: 85%;
+    top: 0%;
+    left: 100%;
+    background-color: #3464F4;
+    z-index: 1;
+}
+.dropdown-content-modalidades ul{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.dropdown-modalidades:hover .dropdown-content-modalidades{
+    display: block;
+}
+.dropdown-content ul li a:hover{
+    background-color: #1F37D6;
+}
+
+
+/* Estilos para el botón del menú hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    height: 4px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+
+/* Estilos para el menú en pantallas pequeñas */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Muestra el menú hamburguesa en pantallas pequeñas */
+    }
+
+    .links {
+        display: none; /* Oculta los enlaces inicialmente */
+        flex-direction: column; /* Cambia a columna para el menú hamburguesa */
+        position: absolute; /* Posiciona el menú */
+        background-color: #2554e0; /* Mismo color de fondo que la nav */
+        width: 100%;
+        top: 75px; /* Alineación justo debajo de la nav */
+        left: 0;
+        z-index: 1000; /* Asegura que se muestre sobre otros elementos */
+    }
+
+    .links.active {
+        display: flex; /* Muestra el menú cuando está activo */
+        height: 50vh;
+    }
+
+    .links ul {
+        flex-direction: column; /* Cambia la dirección a columna */
+        margin: 0;
+        padding: 0;
+    }
+
+    .links ul li {
+        width: 100%; /* Hace que los enlaces ocupen el 100% */
+        text-align: center; /* Alinea el texto al centro */
+        height: auto; /* Ajusta la altura a auto */
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block; /* Se muestra al hacer hover */
+        position: absolute; 
+        width: 100%;
+        height: 30vh;
+    }
+}

@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/alumnos.css">
+<link rel="stylesheet" href="/css/layout/textos.css">
+{% endblock extra_css %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="txt_principal_line">{{object.name}}</h2>
+    <div class="p_block">
+        {{object.content}}
+    </div>
+</div>
+
+{% endblock content %}

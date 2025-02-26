@@ -1,0 +1,77 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Inicio{% endblock title %}
+
+{% block content %}
+<div class="portada">
+    <img src="{% static 'img/foto-escuela.jpg' %}" alt="Foto del frente de la escuela" class="foto-escuela">
+    <div class="txt">
+        <h2>Lorem ipsum dolor sit amet, adipiscing elit.</h2>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet.</h3>
+    </div>
+</div>
+
+<div class="informacion">
+    <div class="institucion">
+        <h3>Institución</h3>
+        <video autoplay muted controls preload="metadata">
+            <source src="{% static 'img/esc.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+    <div class="novedades">
+        <div class="header">
+            <h3>Novedades</h3>
+        </div>
+        <div class="body">
+            <!-- El contenido de novedades dinámico no se puede representar sin el uso de JavaScript -->
+            {% for novedad in object_list %}
+            <div class="new">
+                <a href="novedad/{{novedad.slug}}/">
+                    <h5>{{novedad.created}}</h5>
+                    <h4>{{novedad.title}}</h4>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="modalidades">
+    <h3>Modalidades</h3>
+    <div class="cards-container">
+        <div class="card informatica">
+            <img src="{% static 'img/modalidades/informatica.jpg' %}" alt="">
+            <div class="txt">
+                <h4>Informatica</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet</p>
+                <a href="">
+                    <button>Más información</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="card administracion">
+            <img src="{% static 'img/administracion.webp' %}" alt="">
+            <div class="txt">
+                <h4>Administracion</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet</p>
+                <a href="">
+                    <button>Más información</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="card electromecanica">
+            <img src="{% static 'img/electromecanica.webp' %}" alt="">
+            <div class="txt">
+                <h4>Electromecanica</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet</p>
+                <a href="">
+                    <button>Más información</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,180 @@
+/* general */
+.footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.footer ul{
+    list-style: none;
+}
+.footer a, .footer p, .footer li{
+    color: #1F2A37;
+    font-size: 12px;
+}
+.footer h4{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.footer .top{
+    display: flex;
+    justify-content: space-between;
+    width: 58%;
+    margin: 30px auto;
+}
+
+/* top */
+.top .info{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin-right: 100px;
+}
+.explorar, .alumnos{
+    margin: 0 10px;
+}
+.explorar li, .alumnos li{
+    margin-bottom: 5px;
+}
+
+/* contacto */
+.contacto{
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+.correo, .telefono{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.correo i, .telefono i{
+    margin-right: 5px;
+}
+.redes i{
+    margin-right: 5px;
+    width: 30px;
+    height: auto;
+    font-size: 20px;
+}
+
+/* newsletter */
+.top .newsletter{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 30%;
+}
+.top .newsletter h3{
+    font-size: 26px;
+}
+.input{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.input a{
+    color: white;
+}
+.input input{
+    width: 250px;
+    padding: 8px;
+    border: none;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+}
+.input button{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3464F4;
+    cursor: pointer;
+}
+.bottom{
+    width: 65%;
+    margin: auto;
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+@media (max-width:1024px) {
+    .footer .top{
+        flex-direction: column;
+        justify-content: space-between;
+        width: 58%;
+        gap: 20px;
+    }
+    .top .info{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-right: 100px;
+    }
+    .top .newsletter{
+        width: 100%;
+        align-items: center;
+    }
+    .input{
+        justify-content: center;
+        gap: 15px;
+    }
+}
+@media (max-width:768px) {
+    .footer .top{
+        width: 78%;
+    }
+    .top .info h4{
+        font-size: 1.1rem;
+    }
+    .top .newsletter h3{
+        font-size: 22px;
+    }
+    .input input{
+        width: 70%;
+    }
+    .bottom{
+        width: 85%;
+    }
+}
+@media (max-width:768px) {
+    .footer .top{
+        flex-direction: column;
+        justify-content: space-between;
+        width: 78%;
+        gap: 20px;
+    }
+    .top .info{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .top .info *{
+        text-align: center;
+    }
+    .top .info h4{
+        font-size: 1.2rem;
+    }
+    .top .newsletter{
+        width: 100%;
+        align-items: center;
+    }
+    .top .newsletter h3{
+        font-size: 22px;
+    }
+    .input{
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+    .input input{
+        width: 70%;
+    }
+    .bottom{
+        width: 85%;
+    }
+}

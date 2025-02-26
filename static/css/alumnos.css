@@ -1,0 +1,108 @@
+.container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+}
+.container a{
+    color: rgb(15, 51, 212);
+}
+.container .col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* Centro de estudiantes */
+.img-container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.img-promo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.img-promo h3{
+    padding: 5px;
+    text-align: center;
+    width: 90%;
+    font-size: 20px;
+    color: #377BFD;
+    border-bottom: 2px solid #377BFD;
+    margin-bottom: 20px;
+}
+.img-promo img{
+    object-fit: cover;
+    width: 85%;
+}
+
+
+/* EXAMENES */
+.tag-container{
+    margin-bottom: 15px
+}
+
+/* Modalidaes */
+.row-1, .row-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+.row-1 .image-content, .row-2 .image-content{
+    width: 40%;
+}
+.row-1 .image-content img, .row-2 .image-content img{
+    width: 100%;
+    height: fit-content;
+}
+.row-1 .texto, .row-2 .texto{
+    width: 50%;
+}
+.row-1 .texto p, .row-2 .texto p{
+    padding: 10px 0;
+}
+
+
+/* Horarios */
+.card-container{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10vh;
+    gap: 20px;
+}
+.card-container .col{
+    width: 30%;
+    padding: 15px 20px;
+}
+
+@media (max-width: 1024px) {
+    .card-container{
+        width: 80%;
+    }
+    .card-container .col{
+        width: 45%;
+    }
+}
+@media (max-width: 768px) {
+    .img-container{
+        width: 80%;
+    }
+}
+@media (max-width: 480px) {
+    .img-container{
+        width: 90%;
+    }
+    .card-container{
+        width: 90%;
+    }
+    .card-container .col{
+        width: 100%;
+    }
+}

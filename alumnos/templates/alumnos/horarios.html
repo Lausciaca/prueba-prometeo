@@ -1,0 +1,59 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Horarios{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/alumnos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/textos.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container">
+    <h2 class="txt_principal">Horarios</h2>
+    <div class="card-container">
+        <div class='col'>
+            <h3>Primero</h3>
+            <hr />
+            {% for horario in primero %}
+            <a href='{{horario.link}}'><h4>{{horario}}</h4></a>
+            {% endfor %}
+        </div>
+        <div class='col'>
+            <h3>Segundo</h3>
+            <hr />
+            {% for horario in segundo %}
+            <a href='{{horario.link}}'><h4>{{horario}}</h4></a>
+            {% endfor %}
+        </div>
+        <div class='col'>
+            <h3>Tercero</h3>
+            <hr />
+            {% for horario in tercero %}
+            <a href='{{horario.link}}'><h4>{{horario}}</h4></a>
+            {% endfor %}
+        </div>
+        <div class='col'>
+            <h3>Cuarto</h3>
+            <hr />
+            {% for horario in cuarto %}
+            <a href='{{horario.link}}'><h4>{{horario}}</h4></a>
+            {% endfor %}
+        </div>
+        <div class='col'>
+            <h3>Quinto</h3>
+            <hr />
+            {% for horario in quinto %}
+            <a href='{{horario.link}}'><h4>{{horario}}</h4></a>
+            {% endfor %}
+        </div>
+        <div class='col'>
+            <h3>Sexto</h3>
+            <hr />
+            {% for horario in sexto %}
+            <a href='{{horario.link}}'><h4>{{horario}}</h4></a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

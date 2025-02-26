@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/layout/nav.css' %}">
+        <link rel="stylesheet" href="{% static '/css/layout/footer.css' %}">
+        <script src="https://kit.fontawesome.com/3e470c9a7d.js" crossorigin="anonymous"></script>
+        {% block extra_css %}
+        
+        {% endblock extra_css %}
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="logo">
+                <a href="/">
+                    <div class="img">
+                        <img src="{% static '/img/logo.png' %}" alt="">
+                    </div>
+                    <div class="txt">
+                        <h1 class="titulo_uno">E.E.T.P. N°669</h1>
+                        <h2 class="titulo_dos">General José de San Martín</h2>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Botón para el menú hamburguesa -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        
+            <div class="links" id="nav-links">
+                <ul>
+                    <li>
+                        <a href="{% url 'institucion' %}" class="{% if request.path == '/institucion' %}active{% endif %}">Institucion</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="link-alumnos {% if request.path|slice:":9" == '/alumnos/' %}active{% endif %}">Alumnos</a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li>
+                                    <a href="{% url "alumnos_centro-de-estudiantes" %}">Centro de estudiantes</a>
+                                </li>
+                                <li>
+                                    <a href="{% url "alumnos_inscripciones" %}">Inscripciones</a>
+                                </li>
+                                <li>
+                                    <a href="{% url "alumnos_examenes" %}">Examenes</a>
+                                </li>
+                                <li class="dropdown-modalidades">
+                                    <a href="#">Modalidades</a>
+                                    <div class="dropdown-content-modalidades">
+                                        <ul>
+                                            {% for modalidad in modalidades %}
+                                            <li>
+                                                <a href="{% url 'alumnos_modalidades' modalidad.slug %}">{{modalidad.name}}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="{% url "alumnos_horarios" %}">Horarios</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'biblioteca' %}" class="{% if request.path == '/biblioteca' %}active{% endif %}">Biblioteca</a>
+                    </li>
+                    <li>
+                        <a href="{% url "secretaria" %}" class="{% if request.path == '/secretaria' %}active{% endif %}">Secretaría</a>
+                    </li>
+                    <li>
+                        <a href="{% url "contacto" %}" class="{% if request.path == '/contacto' %}active{% endif %}">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const navLinks = document.getElementById('nav-links');
+            
+                mobileMenu.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            });
+        </script>
+        
+        
+
+        {% block content %}{% endblock content %}
+
+
+        
+        <div class="footer">
+            <div class="top">
+                <div class="info">
+                    <div class="explorar">
+                        <h4>Explorar</h4>
+                        <ul>
+                            <li>
+                                <a href="">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="">Institución</a>
+                            </li>
+                            <li>
+                                <a href="">Biblioteca</a>
+                            </li>
+                            <li>
+                                <a href="">Secretaría</a>
+                            </li>
+                            <li>
+                                <a href="">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="alumnos">
+                        <h4>Alumnos</h4>
+                        <ul>
+                            <li>
+                                <a href="">Centro de est.</a>
+                            </li>
+                            <li>
+                                <a href="">Inscripciones</a>
+                            </li>
+                            <li>
+                                <a href="">Exámenes</a>
+                            </li>
+                            <li>
+                                <a href="">Modalidades</a>
+                            </li>
+                            <li>
+                                <a href="">Horarios</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contacto">
+                        <h4>Contacto</h4>
+                        <div class="correo">
+                            <i class="fa-regular fa-envelope"></i>
+                            <p>correorandom123@gmail.com</p>
+                        </div>
+                        <div class="telefono">
+                            <i class="fa-solid fa-phone"></i>
+                            <p>+54 9 3400 321323</p>
+                        </div>
+                        <div class="redes">
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsletter">
+                    <h3>Suscribete a nuestro newsletter</h3>
+                    <div class="input">
+                        <input type="text" placeholder="Ingrese su correo">
+                        <button>
+                            <a href="">Enviar</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <p></p>
+                <p>EETP N°669 - 2024</p>
+                <a href="">Política de privacidad</a>
+            </div>
+        </div>
+    </body>
+</html>
+

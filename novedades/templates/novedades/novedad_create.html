@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Novedad{% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/textos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/novedad.css' %}">
+    <link rel="stylesheet" href="{% static 'ckeditor/ckeditor/skins/moono-lisa/editor.css' %}">
+
+    <script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script>
+        CKEDITOR.replace('id_field_name');  // Reemplaza 'id_field_name' por el ID del campo que quieras aplicar CKEditor
+    </script>
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container">    
+    <form method="post" class='novedad-form'>{% csrf_token %}
+        <h2>Crear novedad</h2>
+        {{ form.as_p }}
+        <input type="submit" value="Crear novedad" class='create-form'>
+    </form>
+</div>
+{% endblock content %}
+

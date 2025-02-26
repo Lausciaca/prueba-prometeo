@@ -1,0 +1,34 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Centro de estudiantes{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/alumnos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/textos.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container">
+    <h2 class="txt_principal">Centro de estudiantes</h2>
+    <div class="resenia-historica p_block">
+        <h3>Objetivo</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet.</p>
+    </div>
+    
+    <div class="img-container">
+        <div class="img-promo">
+            <h3>2024</h3>
+            <img src="{% static 'img/promos/promo-example.png' %}" alt="">
+        </div>
+        <div class="img-promo">
+            <h3>2023</h3>
+            <img src="{% static 'img/promos/promo-example.png' %}" alt="">
+        </div>
+        <div class="img-promo">
+            <h3>2022</h3>
+            <img src="{% static 'img/promos/promo-example.png' %}" alt="">
+        </div>
+    </div>
+</div>
+{% endblock content %}

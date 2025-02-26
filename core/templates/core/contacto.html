@@ -1,0 +1,61 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Contacto{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/textos.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container">
+    <div class="faq-container">
+        <h2 class="txt_principal">Preguntas frecuentes</h2>
+        <div class="faq">
+            <details>
+                <summary>Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    <span class="faq-icon"></span>
+                </summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet.</p>
+            </details>
+            <details>
+                <summary>Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    <span class="faq-icon"></span>
+                </summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet.</p>
+            </details>
+            <details>
+                <summary>Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    <span class="faq-icon"></span>
+                </summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet.</p>
+            </details>
+            <details>
+                <summary>Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    <span class="faq-icon"></span>
+                </summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet.</p>
+            </details>
+            <details>
+                <summary>Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    <span class="faq-icon"></span>
+                </summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet proin ut vitae, felis. Mauris aliquet faucibus iaculis dui vitae ullamcorper ac enim mi pharetra amet.</p>
+            </details>
+        </div>
+    </div>
+    
+    <div class="map">
+        <div class="sub-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4204.069722857324!2d-60.3238978358747!3d-33.246267514010576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b76c1be4d74db9%3A0x9702f63cf3e1074a!2sEscuela%20Tecnica%20N%C2%B0669!5e0!3m2!1ses-419!2sar!4v1721957237074!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-text">
+                <h4>¡Contáctanos!</h4>
+                <p>informes@eetp669.edu.ar</p>
+                <p>3400-470487</p>
+                <p>Independencia 3082, Villa Constitución, Santa Fe 2919</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

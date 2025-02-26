@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Novedad{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/layout/textos.css' %}">
+<link rel="stylesheet" href="{% static 'css/novedad.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container">    
+    <div class="p_block novedad">
+        <div class='line'>
+            <h3>{{ object.title }}</h3>
+            <h4>{{ object.created|date:"d M Y" }}</h4> 
+        </div>
+        <p>{{ object.content|safe  }}</p>
+    </div>
+</div>
+{% endblock content %}
+
+

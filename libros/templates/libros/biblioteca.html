@@ -1,0 +1,91 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Biblioteca{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "/css/index.css" %}">
+    <link rel="stylesheet" href="{% static "/css/biblioteca.css" %}">
+    <link rel="stylesheet" href="{% static "/css/layout/textos.css" %}">
+    <script src="https://kit.fontawesome.com/3e470c9a7d.js" crossorigin="anonymous"></script>
+    {% endblock extra_css %}
+
+
+{% block content %}
+<h2 class="txt_principal">Biblioteca</h2>
+<div class="container">
+    <div class="filters">
+        <h3>Búsqueda</h3>
+        <form method="GET" id="filters-form">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="q" placeholder="Buscar por título" value="{{ query }}" id="search-input">
+                <button type="submit" id="search-button">Buscar</button>
+            </div>
+
+            <div class="materia-filter">
+                <h4>Materia</h4>
+                <div class="materia-listado">
+                    {% for materia in materias %}
+                    <!-- Asocias el label con el input mediante el atributo 'for' -->
+                    <label for="materia_{{materia.id}}">
+                        <input type="checkbox" id="materia_{{materia.id}}" name="materia" value="{{materia.nombre}}" 
+                               {% if materia.nombre in selected_materias %}checked{% endif %}>
+                        <p>{{materia.nombre}}</p>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="autor-filter">
+                <h4>Autor</h4>
+                <div class="autor-listado">
+                    {% for autor in autores %}
+                    <label for="autor_{{autor}}">
+                        <input type="checkbox" id="autor_{{autor}}" name="author" value="{{autor}}" 
+                               {% if autor in selected_authors %}checked{% endif %}>
+                        <p>{{autor}}</p>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Materia</th>
+                <th>Editorial</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for libro in libros %}
+            <tr class='table-content'>
+                <td class="titulo">{{libro.title}}</td>
+                <td class="autor">{{libro.author}}</td>
+                <td class="materia">{{libro.materia.nombre}}</td>
+                <td class="editorial">{{libro.publisher}}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No se encontraron libros.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Seguir filtrando automáticamente cuando se seleccionen los checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            document.getElementById('filters-form').submit();
+        });
+    });
+</script>
+
+
+{% endblock content %}

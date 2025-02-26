@@ -1,0 +1,106 @@
+.txt_principal{
+    text-align: center;
+    color: #181D53;
+    margin: 50px auto;
+}
+.txt_principal_line{
+    text-align: center;
+    color: #1F2C89;
+    margin: 50px auto;
+    width: 60%;
+    border-bottom: 2px solid #377BFD;
+    padding: 10px;
+}
+.p_block{
+    width: 60%;
+    margin-bottom: 80px;
+}
+.p_block h4{
+    color: #1F37D6;
+}
+.p_block h3{
+    color: #181D53;
+    border-bottom: 2px solid #377BFD;
+    padding: 0 0 5px 20px;
+    font-size: 20px;
+}
+.p_block p{
+    padding: 15px 0 0px 20px;
+    font-size: 14px;
+    color: #586370;
+}
+
+
+/* boton */
+.button{
+    border: none;
+    float: right;
+    margin-top: 40px;
+    color: white;
+    background-color: #3464F4;
+    padding: 12px 50px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.button:hover{
+    background-color: #1F37D6;
+}
+
+
+/* tag */
+.tag{
+    display: flex;
+    margin: 15px 20px 0 20px;
+}
+.tag p{
+    padding: 0 5px;
+
+}
+.l{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #636363;
+}
+.l i{
+    font-size: 16px;
+}
+.r{
+    height: 100%;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+.r p{
+    color: black;
+}
+
+
+/* file */
+.file{
+    display: flex;
+    margin: 15px 20px;
+}
+.file p{
+    padding: 0;
+    margin-left: 5px;
+}
+.file .name{
+    color: #274BE9;
+}
+.file .weight{
+    font-size: 11px;
+    margin-top: auto;
+}
+
+
+@media (max-width: 768px) {
+    .p_block{
+        width: 80%;
+    }
+}
+@media (max-width: 425px) {
+    .p_block{
+        width: 90%;
+    }
+}
