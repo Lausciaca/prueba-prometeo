@@ -7,5 +7,5 @@ urlpatterns = [
     path('alumnos/', include('alumnos.urls')),
     path('biblioteca', include('libros.urls')),
     path('secretaria', SecretariaPageView.as_view(), name='secretaria'),
-    path('contacto', ContactoPageView.as_view(), name='contacto')
+    path('contacto', ContactoPageView.as_view(), name='contacto'),
 ]

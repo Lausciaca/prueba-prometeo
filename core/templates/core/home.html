@@ -14,23 +14,25 @@
 
 <div class="informacion">
     <div class="institucion">
-        <h3>Institución</h3>
+        <h2 class='info-title'>Conozca nuestra institucion</h2>
         <video autoplay muted controls preload="metadata">
             <source src="{% static 'img/esc.mp4' %}" type="video/mp4">
         </video>
+        <p class="smalltext">Descubra nuestra misión, valores y el impacto que generamos en la comunidad a través de este video institucional.</p>
     </div>
     <div class="novedades">
         <div class="header">
-            <h3>Novedades</h3>
+            <h2 class='info-title'>Ultimas noticias</h2>
         </div>
         <div class="body">
             <!-- El contenido de novedades dinámico no se puede representar sin el uso de JavaScript -->
             {% for novedad in object_list %}
             <div class="new">
-                <a href="novedad/{{novedad.slug}}/">
+                <h4>{{novedad.title}}</h4>
+                <div class="sub">
                     <h5>{{novedad.created}}</h5>
-                    <h4>{{novedad.title}}</h4>
-                </a>
+                    <a href="{% url 'novedad' slug=novedad.slug %}">Leer más...</a>
+                </div>
             </div>
             {% endfor %}
         </div>
